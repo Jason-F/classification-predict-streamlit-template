@@ -254,6 +254,7 @@ def main():
         st.write('Keletso Pule')
         st.write('Dineo Mahlangu')
         st.write('Melusi Zwane')
+        st.write('Chwayita Happiness')
         st.image('resources/imgs/EDSA_logo.png',use_column_width=True)
 
 if __name__ == '__main__':
