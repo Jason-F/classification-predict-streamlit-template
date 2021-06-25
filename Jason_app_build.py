@@ -224,22 +224,22 @@ def main():
                     return key
         st.subheader('tweet classification')
         input_text = st.text_area('Enter Text (max. 140 characters):') ##user entering a single text to classify and predict
-        all_ml_models = ["LR","NB","SVC"]
+        all_ml_models = ["Logistic Regression","Naive Bayes Multinomial","Support Vector Classifier"]
         model_choice = st.selectbox("Choose ML Model",all_ml_models)
         prediction_labels = {'Negative':-1,'Neutral':0,'Positive':1,'News':2}
         if st.button('Classify'):
             st.text("Original text:\n{}".format(input_text))
             text1 = data_clean(input_text) ###passing the text through the 'data_clean' function
             vect_text = tweet_cv.transform([text1]).toarray()
-            if model_choice == 'LR':
+            if model_choice == 'Logistic Regression':
                 predictor = load_prediction_models("resources/Logistic_regression.pkl")
                 prediction = predictor.predict(vect_text)
                 # st.write(prediction)
-            elif model_choice == 'SVC':
+            elif model_choice == 'Support Vector Classifier':
                 predictor = load_prediction_models("resources/SVC_model.pkl")
                 prediction = predictor.predict(vect_text)
                 # st.write(prediction)
-            elif model_choice == 'NB':
+            elif model_choice == 'Naive Bayes Multinomial':
                 predictor = load_prediction_models("resources/tfidfvect.pkl")
                 prediction = predictor.predict(vect_text)
                 # st.write(prediction)
