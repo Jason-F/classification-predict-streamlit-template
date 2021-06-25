@@ -240,7 +240,7 @@ def main():
                 prediction = predictor.predict(vect_text)
                 # st.write(prediction)
             elif model_choice == 'Naive Bayes Multinomial':
-                predictor = load_prediction_models("resources/tfidfvect.pkl")
+                predictor = load_prediction_models("resources/NB_model.pkl")
                 prediction = predictor.predict(vect_text)
                 # st.write(prediction)
             final_result = get_keys(prediction,prediction_labels)
